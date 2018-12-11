@@ -1,0 +1,13 @@
+运维自动化服务-API网管
+
+所有运维自动化服务对外提供服务的唯一入口
+
+请根据实际情况修改注册地址:eureka.client.serviceUrl.defaultZone
+请根据实际情况修改日志地址:logging.file
+
+需要提前配置IP白名单：filter.accessIpList.filePath
+
+格式：
+127.0.0.1
+10.100.22.232
+192.168.0.56

@@ -1,0 +1,31 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: ci-gateway
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8111/eureka/
+      
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
+zuul:
+  routes:
+    user-service:
+      path: /cloud/**
+      serviceId: ci-cloudcenter
+
+filter:
+  accessIpList:
+    filePath: iplist.txt
+    
+logging:
+  file: logs/${spring.application.name}.log
